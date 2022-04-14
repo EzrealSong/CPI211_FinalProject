@@ -39,7 +39,7 @@ public class GunSystem : MonoBehaviour
     {
        
         GameObject muzzleEff = Instantiate(muzzleFlash, spawnPoint.transform.position, spawnPoint.transform.rotation);
-        Destroy(muzzleEff, 2f);
+        //Destroy(muzzleEff, 2f);
 
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
