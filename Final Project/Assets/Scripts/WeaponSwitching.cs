@@ -4,7 +4,7 @@ using UnityEngine;
 public class WeaponSwitching : MonoBehaviour
 {
 
-    public int selectedWeapon = 0;
+    public static int selectedWeapon = 0;
     // Start is called before the first frame update
     void Start()
     {
