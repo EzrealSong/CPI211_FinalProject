@@ -14,6 +14,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: CanAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: enemyDead
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7048966651488675077}
   m_Solo: 0
@@ -96,6 +99,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: PlayerDead
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: enemyDead
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7959601242214969619}
   m_Solo: 0
@@ -163,6 +169,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: enemyDead
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -216,6 +228,9 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
+    m_ConditionEvent: enemyDead
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
     m_ConditionEvent: PlayerFound
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -245,6 +260,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: CanAttack
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: enemyDead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7959601242214969619}

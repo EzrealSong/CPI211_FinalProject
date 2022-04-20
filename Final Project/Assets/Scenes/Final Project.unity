@@ -650,6 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  objectdead: 0
 --- !u!114 &679876570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,9 +667,10 @@ MonoBehaviour:
   distance: 0
   moveSpeed: 6
   FindingRange: 5
+  AttackRange: 2
   Skeleton: {fileID: 0}
   Animator: {fileID: 679876571}
-  canMove: 0
+  health: 50
 --- !u!95 &679876571 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
