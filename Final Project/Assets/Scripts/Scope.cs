@@ -69,14 +69,11 @@ public class Scope : MonoBehaviour
         }
         else if(currentWeapon == 4)
         {
-            
-        } else if(currentWeapon == 5)
-        {
             animator.SetBool("IsSniper", true);
             animator.SetBool("IsScoped", true);
             scopeOverlay.SetActive(true);
             weaponCamera.SetActive(false);
-        }
+        } 
 
         mainCamera.fieldOfView = scopedFOV;
 

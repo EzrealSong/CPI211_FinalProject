@@ -19,6 +19,8 @@ public class GunSystem : MonoBehaviour
     public GameObject spawnPoint;
 
     private float nextTimeToFire;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,14 @@ public class GunSystem : MonoBehaviour
         if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
+            setBooleanFire();
+            //animator.SetBool("IsFiringAR", true);
             Shoot();
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            unsetBooleanFire();
+            //animator.SetBool("IsFiringAR", false);
         }
     }
 
@@ -47,6 +56,8 @@ public class GunSystem : MonoBehaviour
             Target target = hit.transform.GetComponent<Target>();
             if(target != null)
             {
+                //animator.SetBool("IsFiringAR", false);
+                
                 target.TakeDamage(damage);
             }
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
@@ -55,6 +66,48 @@ public class GunSystem : MonoBehaviour
             {
                 hit.rigidbody.AddForce(hit.normal); 
             }
+        }
+    }
+    void setBooleanFire()
+    {
+        if(animator.GetBool("IsAR") == true)
+        {
+            animator.SetBool("IsARFiring", true);
+        } else if (animator.GetBool("IsRevolver") == true)
+        {
+            animator.SetBool("IsRevolverFiring", true);
+        } else if (animator.GetBool("IsSMG") == true)
+        {
+            animator.SetBool("IsSMGFiring", true);
+        } else if (animator.GetBool("IsShotgun") == true)
+        {
+            animator.SetBool("IsShotgunFiring", true);
+        } else if (animator.GetBool("IsSniper") == true)
+        {
+            animator.SetBool("IsSniperFiring", true);
+        }
+    }
+    void unsetBooleanFire()
+    {
+        if (animator.GetBool("IsAR") == true)
+        {
+            animator.SetBool("IsARFiring", false);
+        }
+        else if (animator.GetBool("IsRevolver") == true)
+        {
+            animator.SetBool("IsRevolverFiring", false);
+        }
+        else if (animator.GetBool("IsSMG") == true)
+        {
+            animator.SetBool("IsSMGFiring", false);
+        }
+        else if (animator.GetBool("IsShotgun") == true)
+        {
+            animator.SetBool("IsShotgunFiring", false);
+        }
+        else if (animator.GetBool("IsSniper") == true)
+        {
+            animator.SetBool("IsSniperFiring", false);
         }
     }
 
