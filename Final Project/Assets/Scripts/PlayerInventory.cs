@@ -11,11 +11,17 @@ public class PlayerInventory : MonoBehaviour
     public int AmountOfLoot { get; private set; }
     public int AmountOfKeys { get; private set; }
 
+    public bool hasAR = false;
+    public bool hasRevolver = false;
+    public bool hasSMG = false;
+    public bool hasShotgun = false;
+    public bool hasSniper = false;
 
 
-    public void LootCollected()
+
+    public void LootCollected(int amount)
     {
-        AmountOfLoot++;
+        AmountOfLoot = AmountOfLoot + amount;
         lootCount.text = (("Loot: ")+(AmountOfLoot.ToString())  );
     }
 
@@ -29,5 +35,24 @@ public class PlayerInventory : MonoBehaviour
     {
         AmountOfKeys--;
         keyCount.text = (("Keys: ") + (AmountOfKeys.ToString()));
+    }
+    public void GunCollected(int gunType)
+    {
+        if(gunType == 1)
+        {
+            hasAR = true;
+        } else if(gunType == 2)
+        {
+            hasRevolver = true;
+        } else if(gunType == 3)
+        {
+            hasSMG = true;
+        } else if(gunType == 4)
+        {
+            hasShotgun = true;
+        } else if(gunType == 5)
+        {
+            hasSniper = true;
+        }
     }
 }

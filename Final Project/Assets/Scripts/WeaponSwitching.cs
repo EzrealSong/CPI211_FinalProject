@@ -6,11 +6,13 @@ public class WeaponSwitching : MonoBehaviour
 
     public Animator animator;
     public static int selectedWeapon = 0;
+
+    [SerializeField] private PlayerInventory inventory;
     // Start is called before the first frame update
     void Start()
     {
-        SelectWeapon();
-        animator.SetBool("IsAR", true);
+        //SelectWeapon();
+        //animator.SetBool("IsAR", true);
     }
 
     // Update is called once per frame
@@ -18,7 +20,7 @@ public class WeaponSwitching : MonoBehaviour
     {
         int previousSelectedWeapon = selectedWeapon;
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        /*if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             if (selectedWeapon >= transform.childCount - 1)
             {
@@ -41,54 +43,73 @@ public class WeaponSwitching : MonoBehaviour
                 selectedWeapon--;
             }
 
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            selectedWeapon = 0;
-            animator.SetBool("IsAR", true);
-            animator.SetBool("IsRevolver", false);
-            animator.SetBool("IsSMG", false);
-            animator.SetBool("IsShotgun", false);
-            animator.SetBool("IsSniper", false);
+            if (inventory.hasAR)
+            {
+                selectedWeapon = 0;
+                animator.SetBool("IsAR", true);
+                animator.SetBool("IsRevolver", false);
+                animator.SetBool("IsSMG", false);
+                animator.SetBool("IsShotgun", false);
+                animator.SetBool("IsSniper", false);
+                SelectWeapon();
+            }
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
         {
-            selectedWeapon = 1;
-            animator.SetBool("IsAR", false);
-            animator.SetBool("IsRevolver", true);
-            animator.SetBool("IsSMG", false);
-            animator.SetBool("IsShotgun", false);
-            animator.SetBool("IsSniper", false);
+            if (inventory.hasRevolver)
+            {
+                selectedWeapon = 1;
+                animator.SetBool("IsAR", false);
+                animator.SetBool("IsRevolver", true);
+                animator.SetBool("IsSMG", false);
+                animator.SetBool("IsShotgun", false);
+                animator.SetBool("IsSniper", false);
+                SelectWeapon();
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
         {
-            selectedWeapon = 2;
-            animator.SetBool("IsAR", false);
-            animator.SetBool("IsRevolver", false);
-            animator.SetBool("IsSMG", true);
-            animator.SetBool("IsShotgun", false);
-            animator.SetBool("IsSniper", false);
+            if (inventory.hasSMG)
+            {
+                selectedWeapon = 2;
+                animator.SetBool("IsAR", false);
+                animator.SetBool("IsRevolver", false);
+                animator.SetBool("IsSMG", true);
+                animator.SetBool("IsShotgun", false);
+                animator.SetBool("IsSniper", false);
+                SelectWeapon();
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) && transform.childCount >= 4)
         {
-            selectedWeapon = 3;
-            animator.SetBool("IsAR", false);
-            animator.SetBool("IsRevolver", false);
-            animator.SetBool("IsSMG", false);
-            animator.SetBool("IsShotgun", true);
-            animator.SetBool("IsSniper", false);
+            if (inventory.hasShotgun)
+            {
+                selectedWeapon = 3;
+                animator.SetBool("IsAR", false);
+                animator.SetBool("IsRevolver", false);
+                animator.SetBool("IsSMG", false);
+                animator.SetBool("IsShotgun", true);
+                animator.SetBool("IsSniper", false);
+                SelectWeapon();
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha5) && transform.childCount >= 5)
         {
-            selectedWeapon = 4;
-            animator.SetBool("IsAR", false);
-            animator.SetBool("IsRevolver", false);
-            animator.SetBool("IsSMG", false);
-            animator.SetBool("IsShotgun", false);
-            animator.SetBool("IsSniper", true);
-
-
+            if (inventory.hasSniper)
+            {
+                selectedWeapon = 4;
+                animator.SetBool("IsAR", false);
+                animator.SetBool("IsRevolver", false);
+                animator.SetBool("IsSMG", false);
+                animator.SetBool("IsShotgun", false);
+                animator.SetBool("IsSniper", true);
+                SelectWeapon();
+            }
         }
         if (previousSelectedWeapon != selectedWeapon)
         {

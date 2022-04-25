@@ -9,6 +9,7 @@ TagManager:
   - ChestInteractive
   - Key
   - LockedInteractiveObject
+  - Gun
   layers:
   - Default
   - TransparentFX

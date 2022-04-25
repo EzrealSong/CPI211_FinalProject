@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LootCollection : MonoBehaviour
 {
-
+    [SerializeField] private int lootAmount;
 
     private PlayerInventory inventory;
 
@@ -19,7 +19,7 @@ public class LootCollection : MonoBehaviour
             {
 
 
-                inventory.LootCollected();
+                inventory.LootCollected(lootAmount);
                 gameObject.SetActive(false);
             } else if(gameObject.tag == "Key")
             {

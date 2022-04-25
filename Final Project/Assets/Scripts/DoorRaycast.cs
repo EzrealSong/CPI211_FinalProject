@@ -11,6 +11,8 @@ public class DoorRaycast : MonoBehaviour
 
     private MyDoorController raycastedObj;
     private MyChestController chestRaycastedObj;
+    private GunRaycastController gunRaycastedObj;
+
 
     [SerializeField] private KeyCode openDoorKey = KeyCode.E;
 
@@ -20,6 +22,8 @@ public class DoorRaycast : MonoBehaviour
 
     private const string interactableTag = "InteractiveObject";
    private const string chestTag = "ChestInteractive";
+    private const string gunTag = "Gun";
+
 
     private void Update()
     {
@@ -60,6 +64,22 @@ public class DoorRaycast : MonoBehaviour
                 if (Input.GetKeyDown(openDoorKey))
                 {
                     chestRaycastedObj.PlayAnimation();
+                }
+            }
+            else if (hit.collider.CompareTag(gunTag))
+            {
+                if (!doOnce)
+                {
+                    gunRaycastedObj = hit.collider.gameObject.GetComponent<GunRaycastController>();
+                    CrosshairChange(true);
+                }
+
+                isCrosshairActive = true;
+                doOnce = true;
+
+                if (Input.GetKeyDown(openDoorKey))
+                {
+                    gunRaycastedObj.ReceiveGun(hit.collider.name);
                 }
             }
         }

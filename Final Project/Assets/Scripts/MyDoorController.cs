@@ -21,10 +21,10 @@ public class MyDoorController : MonoBehaviour
             doorAnim.Play("DoorOpen", 0, 0.0f);
             doorOpen = true;
         }
-       /* else
+        else
         {
             doorAnim.Play("DoorClose", 0, 0.0f);
             doorOpen = false;
-        }*/
+        }
     }
 }
