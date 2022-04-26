@@ -16,7 +16,7 @@ public class RangedEnemy : MonoBehaviour
 
     void Update()
     {
-        Vector3 direction = new Vector3(player.position.x - transform.position.x, player.position.y - transform.position.y);
+        Vector3 direction = new Vector3(player.position.x - transform.position.x, player.position.y - transform.position.y, player.position.z - transform.position.z);
 
         transform.up = direction;
 

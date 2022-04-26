@@ -23,6 +23,9 @@ public class FollowAI : MonoBehaviour
 
     public int currentWaypoint = 0;
 
+    private Animator Animator;
+    [SerializeField]
+
 
     // Start is called before the first frame update
     void Start()
@@ -86,14 +89,14 @@ public class FollowAI : MonoBehaviour
         if(agent.remainingDistance <= shootDistance && inSight)
         {
             agent.ResetPath();
-            currentState = States.Attack;
+            currentState = States.Attack; 
         }
         else
         {
             if(target != null)
         {
             agent.SetDestination(target.position);
-        }
+            }
         }
     }
 
@@ -102,6 +105,7 @@ public class FollowAI : MonoBehaviour
         if(!inSight)
         {
             currentState = States.Follow;
+            
         }
         //attackWeapon.Fire();
     }
