@@ -29,6 +29,9 @@ public class PlayerInventory : MonoBehaviour
     {
         AmountOfKeys++;
         keyCount.text = (("Keys: ") + (AmountOfKeys.ToString()));
+
+        FindObjectOfType<AudioManager>().Play("Key Sound");
+
     }
 
     public void TakeAwayKey()
