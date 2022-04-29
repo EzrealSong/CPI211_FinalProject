@@ -21,8 +21,8 @@ public class Target : MonoBehaviour
     {
         //play death animation
         this.gameObject.GetComponent<Animator>().Play("Death");
-       
-       Destroy(gameObject,time);
+
+        Destroy(gameObject, time);
     }
 
 }
