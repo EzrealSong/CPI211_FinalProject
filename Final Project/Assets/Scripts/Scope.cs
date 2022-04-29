@@ -14,11 +14,11 @@ public class Scope : MonoBehaviour
     public GameObject weaponController;
 
     public float scopedFOV = 15f;
-        private float normalFOV;
+    private float normalFOV;
 
     void Update()
     {
-        
+
         if (Input.GetButtonDown("Fire2"))
         {
             isScoped = !isScoped;
@@ -53,11 +53,13 @@ public class Scope : MonoBehaviour
         {
             animator.SetBool("IsAR", true);
             animator.SetBool("IsScoped", true);
-        } else if(currentWeapon == 1)
+        }
+        else if (currentWeapon == 1)
         {
             animator.SetBool("IsRevolver", true);
             animator.SetBool("IsScoped", true);
-        } else if(currentWeapon == 2)
+        }
+        else if (currentWeapon == 2)
         {
             animator.SetBool("IsSMG", true);
             animator.SetBool("IsScoped", true);
@@ -67,10 +69,7 @@ public class Scope : MonoBehaviour
             animator.SetBool("IsShotgun", true);
             animator.SetBool("IsScoped", true);
         }
-        else if(currentWeapon == 4)
-        {
-            
-        } else if(currentWeapon == 5)
+        else if (currentWeapon == 4)
         {
             animator.SetBool("IsSniper", true);
             animator.SetBool("IsScoped", true);
@@ -81,7 +80,7 @@ public class Scope : MonoBehaviour
         mainCamera.fieldOfView = scopedFOV;
 
     }
-    
 
-    
+
+
 }
