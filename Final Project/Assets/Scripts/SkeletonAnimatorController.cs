@@ -17,9 +17,9 @@ public class SkeletonAnimatorController : MonoBehaviour
     public float AttackRange;
     [SerializeField]
     NavMeshAgent Skeleton;
-    [SerializeField]
-    private Animator Animator;
-    [SerializeField]
+    
+    public Animator Ske;
+    
 
     public float health = 50f;
     private bool canMove = false;
@@ -42,8 +42,8 @@ public class SkeletonAnimatorController : MonoBehaviour
             canMove = true;
             if(canMove)
             {
-                Animator.SetBool("PlayerFound", true);
-                Animator.SetBool("CanAttack", false);
+                Ske.SetBool("PlayerFound", true);
+                Ske.SetBool("CanAttack", false);
                 Skeleton.SetDestination(player.transform.position);
             }
             
@@ -51,7 +51,7 @@ public class SkeletonAnimatorController : MonoBehaviour
             {
                 canAttack = true;
                 canMove = false;
-                Animator.SetBool("CanAttack", true);
+                Ske.SetBool("CanAttack", true);
                 
             }
             canMove = true;
@@ -63,8 +63,8 @@ public class SkeletonAnimatorController : MonoBehaviour
         {
             canMove = false;
             canAttack = false;
-            Animator.SetBool("PlayerFound", false);
-            Animator.SetBool("CanAttack", false);
+            Ske.SetBool("PlayerFound", false);
+            Ske.SetBool("CanAttack", false);
             Skeleton.SetDestination(this.transform.position);//become Idle
         }
         
