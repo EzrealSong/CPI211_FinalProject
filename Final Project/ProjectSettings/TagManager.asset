@@ -12,6 +12,7 @@ TagManager:
   - Gun
   - Gem
   - ChestLoot
+  - ChestGun
   layers:
   - Default
   - TransparentFX

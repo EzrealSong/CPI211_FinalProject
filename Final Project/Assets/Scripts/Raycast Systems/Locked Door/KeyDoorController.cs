@@ -60,6 +60,7 @@ public class KeyDoorController : MonoBehaviour
                     doorOpen = true;
                     StartCoroutine(PauseDoorInteraction());
                     unlocked = true;
+                    FindObjectOfType<AudioManager>().Play("Door Open");
                     inventory.TakeAwayKey();
                 }
                 else if (doorOpen && !pauseInteraction)
