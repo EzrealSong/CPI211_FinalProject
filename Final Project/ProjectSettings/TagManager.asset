@@ -10,6 +10,8 @@ TagManager:
   - Key
   - LockedInteractiveObject
   - Gun
+  - Gem
+  - ChestLoot
   layers:
   - Default
   - TransparentFX

@@ -18,13 +18,24 @@ public class LootCollection : MonoBehaviour
             if (gameObject.tag == "Loot")
             {
 
-
+                FindObjectOfType<AudioManager>().Play("Gold Pickup");
                 inventory.LootCollected(lootAmount);
                 gameObject.SetActive(false);
             }
             else if (gameObject.tag == "Key")
             {
                 inventory.KeyCollected();
+                gameObject.SetActive(false);
+            } else if(gameObject.tag == "Gem")
+            {
+                FindObjectOfType<AudioManager>().Play("Key Sound");
+                inventory.LootCollected(lootAmount);
+                gameObject.SetActive(false);
+            }
+            else if (gameObject.tag == "ChestLoot")
+            {
+                FindObjectOfType<AudioManager>().Play("Chest Gold");
+                inventory.LootCollected(lootAmount);
                 gameObject.SetActive(false);
             }
         }

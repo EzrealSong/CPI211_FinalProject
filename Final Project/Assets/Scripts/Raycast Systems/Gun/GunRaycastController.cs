@@ -30,7 +30,7 @@ public class GunRaycastController : MonoBehaviour
         {
             inventory.GunCollected(5);
         }
-
+        FindObjectOfType<AudioManager>().Play("Pick Up");
         gameObject.SetActive(false);
 
     }

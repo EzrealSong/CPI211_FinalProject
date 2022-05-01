@@ -18,11 +18,13 @@ public class MyDoorController : MonoBehaviour
     {
         if (!doorOpen)
         {
+            FindObjectOfType<AudioManager>().Play("Door Open");
             doorAnim.Play("DoorOpen", 0, 0.0f);
             doorOpen = true;
         }
         else
         {
+            FindObjectOfType<AudioManager>().Play("Door Close");
             doorAnim.Play("DoorClose", 0, 0.0f);
             doorOpen = false;
         }
