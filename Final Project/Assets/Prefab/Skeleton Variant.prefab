@@ -83,6 +83,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
   m_PrefabInstance: {fileID: 3381314445048856354}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3381314445048887752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100074, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
+  m_PrefabInstance: {fileID: 3381314445048856354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!136 &30180643
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -139,3 +144,16 @@ MonoBehaviour:
   Skeleton: {fileID: 30180641}
   Ske: {fileID: 3381314445058263618}
   health: 50
+--- !u!65 &5375209803995798804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381314445048887752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.013410809, y: 0.11352987, z: 0.02840288}
+  m_Center: {x: -0.00000006603477, y: -0.038812812, z: 0.002510235}
