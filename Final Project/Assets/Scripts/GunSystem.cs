@@ -19,6 +19,8 @@ public class GunSystem : MonoBehaviour
     public GameObject spawnPoint;
 
     private float nextTimeToFire;
+    [HideInInspector]
+    public int gunType;
 
     public Animator animator;
     // Start is called before the first frame update
@@ -36,6 +38,7 @@ public class GunSystem : MonoBehaviour
             setBooleanFire();
             //animator.SetBool("IsFiringAR", true);
             Shoot();
+            playSound();
         }
         if (Input.GetButtonUp("Fire1"))
         {
@@ -49,6 +52,7 @@ public class GunSystem : MonoBehaviour
 
         GameObject muzzleEff = Instantiate(muzzleFlash, spawnPoint.transform.position, spawnPoint.transform.rotation);
         //Destroy(muzzleEff, 2f);
+        
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
@@ -72,22 +76,27 @@ public class GunSystem : MonoBehaviour
     {
         if (animator.GetBool("IsAR") == true)
         {
+            gunType = 1;
             animator.SetBool("IsARFiring", true);
         }
         else if (animator.GetBool("IsRevolver") == true)
         {
+            gunType = 2;
             animator.SetBool("IsRevolverFiring", true);
         }
         else if (animator.GetBool("IsSMG") == true)
         {
+            gunType = 3;
             animator.SetBool("IsSMGFiring", true);
         }
         else if (animator.GetBool("IsShotgun") == true)
         {
+            gunType = 4;
             animator.SetBool("IsShotgunFiring", true);
         }
         else if (animator.GetBool("IsSniper") == true)
         {
+            gunType = 5;
             animator.SetBool("IsSniperFiring", true);
         }
     }
@@ -114,5 +123,25 @@ public class GunSystem : MonoBehaviour
             animator.SetBool("IsSniperFiring", false);
         }
     }
+    void playSound()
+    {
+        if(gunType == 1)
+        {
+            FindObjectOfType<AudioManager>().Play("AR Fire");
+        } else if (gunType == 2)
+        {
+            FindObjectOfType<AudioManager>().Play("Shotgun Fire");
+        } else if(gunType == 3)
+        {
+            FindObjectOfType<AudioManager>().Play("SMG Fire");
+        } else if (gunType == 4)
+        {
+            FindObjectOfType<AudioManager>().Play("Shotgun Fire");
+        } else if (gunType == 5)
+        {
+            FindObjectOfType<AudioManager>().Play("Sniper Fire");
+        }
+    }
+    
 
 }

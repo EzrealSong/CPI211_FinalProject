@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 493841177796721962}
   m_Layer: 0
   m_Name: ChestV1_Loot
-  m_TagString: Loot
+  m_TagString: ChestLoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

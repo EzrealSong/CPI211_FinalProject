@@ -23,6 +23,7 @@ public class MyChestController : MonoBehaviour
             chestAnim.SetBool("IsOpened", true);
             //chestAnim.Play("ChestOpen", 0, 0.0f);
             chestOpen = true;
+            FindObjectOfType<AudioManager>().Play("Chest Open");
         }
 
     }

@@ -38,12 +38,14 @@ public class KeyDoorController : MonoBehaviour
             {
                 doorAnim.Play(openAnimationName, 0, 0.0f);
                 doorOpen = true;
+                FindObjectOfType<AudioManager>().Play("Door Open");
                 StartCoroutine(PauseDoorInteraction());
             }
             else if (doorOpen && !pauseInteraction)
             {
                 doorAnim.Play(closeAnimationName, 0, 0.0f);
                 doorOpen = false;
+                FindObjectOfType<AudioManager>().Play("Door Close");
                 StartCoroutine(PauseDoorInteraction());
             }
         }
