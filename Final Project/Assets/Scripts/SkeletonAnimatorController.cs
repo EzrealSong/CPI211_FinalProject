@@ -23,8 +23,7 @@ public class SkeletonAnimatorController : MonoBehaviour
 
     public float health = 50f;
     private bool canMove = false;
-    private bool canAttack = false;
-    Target target;
+   Target target;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,20 +48,17 @@ public class SkeletonAnimatorController : MonoBehaviour
             
             if(distance <= AttackRange)//player in attack range
             {
-                canAttack = true;
-                canMove = false;
+                 canMove = false;
                 Ske.SetBool("CanAttack", true);
                 
             }
             canMove = true;
-            canAttack = false;
             
         }
          //player out of range
         else
         {
             canMove = false;
-            canAttack = false;
             Ske.SetBool("PlayerFound", false);
             Ske.SetBool("CanAttack", false);
             Skeleton.SetDestination(this.transform.position);//become Idle
