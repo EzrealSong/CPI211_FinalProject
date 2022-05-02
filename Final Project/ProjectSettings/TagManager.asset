@@ -12,6 +12,8 @@ TagManager:
   - Gun
   - Gem
   - ChestLoot
+  - WayPoints
+  - Obstacles
   layers:
   - Default
   - TransparentFX
@@ -22,8 +24,8 @@ TagManager:
   - Interact
   - 
   - Weapons
-  - 
-  - 
+  - Player
+  - Obstacles
   - 
   - 
   - 
