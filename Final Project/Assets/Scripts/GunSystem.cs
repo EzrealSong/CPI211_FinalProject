@@ -32,7 +32,8 @@ public class GunSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && !(Input.GetKey(KeyCode.LeftControl)))
+
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             setBooleanFire();
