@@ -23,7 +23,7 @@ public class Giant : MonoBehaviour
 
     public float health = 50f;
     private bool canMove = false;
-    private bool canAttack = false;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -49,20 +49,17 @@ public class Giant : MonoBehaviour
 
             if (distance <= AttackRange)//player in attack range
             {
-                canAttack = true;
                 canMove = false;
                 GiantAni.SetBool("PlayerInRange", true);
 
             }
             canMove = true;
-            canAttack = false;
-
+            
         }
         //player out of range
         else
         {
             canMove = false;
-            canAttack = false;
             GiantAni.SetBool("PlayerDetected", false);
             GiantAni.SetBool("PlayerInRange", false);
             GiantAI.SetDestination(this.transform.position);//become Idle

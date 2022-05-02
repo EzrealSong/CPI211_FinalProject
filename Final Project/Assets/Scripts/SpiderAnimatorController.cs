@@ -23,8 +23,7 @@ public class SpiderAnimatorController : MonoBehaviour
 
     public float health = 30f;
     private bool canMove = false;
-    private bool canAttack = false;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -49,20 +48,17 @@ public class SpiderAnimatorController : MonoBehaviour
 
             if (distance <= AttackRange)//player in attack range
             {
-                canAttack = true;
                 canMove = false;
                 SpiderAni.SetBool("InAttackRange", true);
 
             }
             canMove = true;
-            canAttack = false;
-
+            
         }
         //player out of range
         else
         {
             canMove = false;
-            canAttack = false;
             SpiderAni.SetBool("PlayerFound", false);
             SpiderAni.SetBool("InAttackRange", false);
             SpiderAI.SetDestination(this.transform.position);//become Idle
