@@ -20,7 +20,6 @@ public class SkeletonAnimatorController : MonoBehaviour
     
     public Animator Ske;
     
-
     public float health = 50f;
     private bool canMove = false;
    Target target;
@@ -35,6 +34,7 @@ public class SkeletonAnimatorController : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(player.position, transform.position);
+
 
         if(distance <= FindingRange)//found player
         {

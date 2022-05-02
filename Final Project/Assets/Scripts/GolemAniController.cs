@@ -42,14 +42,14 @@ public class GolemAniController : MonoBehaviour
             if (canMove)
             {
                 GolemAni.SetBool("PlayerFound", true);
-                GolemAni.SetBool("CanAttack", false);
+                GolemAni.SetBool("PlayerInRange", false);
                 GolemAI.SetDestination(player.transform.position);
             }
 
-            if (distance <= AttackRange)//player in attack range
+            if (distance <= AttackRange)//player in attack rangeS
             {
                 canMove = false;
-                GolemAni.SetBool("CanAttack", true);
+                GolemAni.SetBool("PlayerInRange", true);
 
             }
             canMove = true;
@@ -60,7 +60,7 @@ public class GolemAniController : MonoBehaviour
         {
             canMove = false;
             GolemAni.SetBool("PlayerFound", false);
-            GolemAni.SetBool("CanAttack", false);
+            GolemAni.SetBool("PlayerInRange", false);
             GolemAI.SetDestination(this.transform.position);//become Idle
         }
 
