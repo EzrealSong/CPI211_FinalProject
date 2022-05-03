@@ -13,6 +13,9 @@ TagManager:
   - Gem
   - ChestLoot
   - ChestGun
+  - Spider
+  - Skeleton
+  - Golem
   layers:
   - Default
   - TransparentFX

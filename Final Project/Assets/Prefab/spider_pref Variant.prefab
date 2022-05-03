@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: spider_pref Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1715103906888602, guid: 33b828b8f1c31334988de54e3fe47ee6, type: 3}
+      propertyPath: m_TagString
+      value: Spider
+      objectReference: {fileID: 0}
     - target: {fileID: 4251409082942358, guid: 33b828b8f1c31334988de54e3fe47ee6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -95,6 +99,19 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 95681433750800818, guid: 33b828b8f1c31334988de54e3fe47ee6, type: 3}
   m_PrefabInstance: {fileID: 3137139124041438917}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &3762483888518084835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3138811619889851743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.25, z: 0.25}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!195 &1822191440
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -151,16 +168,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 35
   objectdead: 0
---- !u!65 &3762483888518084835
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3138811619889851743}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25, z: 0.25}
-  m_Center: {x: 0, y: 0.15, z: 0}
