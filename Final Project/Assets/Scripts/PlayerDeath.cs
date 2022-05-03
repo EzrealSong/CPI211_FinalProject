@@ -11,6 +11,7 @@ public class PlayerDeath : MonoBehaviour
     public int LootsResult { get; private set; }
     public Player PlayerHealth;
     public PlayerInventory inventory;
+    public GameObject Player;
 
     public void GameOver()
     {
@@ -19,7 +20,7 @@ public class PlayerDeath : MonoBehaviour
     }
     public void Setup(int loot)//show loot value in death screen
     {
-        
+        Destroy(Player.gameObject.GetComponent<FirstPersonMovement>());
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         this.gameObject.SetActive(true);

@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
             TakeDamage(10);
             Console.Write("Collided");
         }
-        else if (colli.gameObject.tag == "Golem")
+        else if (colli.gameObject.tag == "Giant")
         {
             TakeDamage(30);
             Console.Write("Collided");

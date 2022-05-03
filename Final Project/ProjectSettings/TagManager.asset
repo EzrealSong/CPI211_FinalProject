@@ -16,6 +16,8 @@ TagManager:
   - Spider
   - Skeleton
   - Golem
+  - Giant
+  - Boss
   layers:
   - Default
   - TransparentFX
