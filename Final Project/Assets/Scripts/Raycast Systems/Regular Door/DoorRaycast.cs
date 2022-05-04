@@ -23,7 +23,10 @@ public class DoorRaycast : MonoBehaviour
     private const string interactableTag = "InteractiveObject";
     private const string chestTag = "ChestInteractive";
     private const string gunTag = "Gun";
-  
+
+    [SerializeField] private GameObject interactE = null;
+
+
 
 
     private void Update()

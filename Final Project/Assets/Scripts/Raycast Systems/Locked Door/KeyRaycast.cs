@@ -13,6 +13,7 @@ public class KeyRaycast : MonoBehaviour
     [SerializeField] private KeyCode openDoorKey = KeyCode.E;
 
     [SerializeField] private Image crosshair = null;
+    [SerializeField] private GameObject interactE = null;
 
     private bool isCrosshairActive;
     private bool doOnce;
@@ -58,12 +59,14 @@ public class KeyRaycast : MonoBehaviour
         if (on && !doOnce)
         {
             crosshair.color = Color.red;
+            interactE.SetActive(true);
 
         }
         else
         {
             crosshair.color = Color.white;
             isCrosshairActive = false;
+            interactE.SetActive(false);
         }
     }
 }
