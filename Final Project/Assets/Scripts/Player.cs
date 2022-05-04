@@ -8,7 +8,10 @@ public class Player : MonoBehaviour
     public int MaxHealth = 100;
     public int currentHealth;
     public PlayerDeath Playerdeath;
+    public Summary summary;
     public HealthBar healthBar;
+
+    public bool gameover = false;
 
     void Start()
     {
@@ -40,9 +43,11 @@ public class Player : MonoBehaviour
             healthBar.setHealth(currentHealth);
             if(currentHealth <= 0)
             {
+                gameover = true;
                 Playerdeath.GameOver();
                 Playerdeath.gameObject.SetActive(true);
             }
+            gameover = false;
         
     }
 }

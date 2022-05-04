@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class PlayerDeath : MonoBehaviour
 {
     [SerializeField]
-    private Text LootResult;
+    private Text LootShow;
+    [SerializeField]
+    private Text SummaryLoot;
     public int LootsResult { get; private set; }
     public Player PlayerHealth;
     public PlayerInventory inventory;
@@ -24,7 +26,8 @@ public class PlayerDeath : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         this.gameObject.SetActive(true);
-        LootResult.text = "You have lost " + loot.ToString() + " Value Loots";
+        LootShow.text = "You have lost " + loot.ToString() + " Value Loots";
+        SummaryLoot.text = loot.ToString();
     }
 
     public void Restart()

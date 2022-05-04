@@ -61,5 +61,8 @@ public class PlayerInventory : MonoBehaviour
         {
             hasSniper = true;
         }
+    
+    
     }
+   
 }
