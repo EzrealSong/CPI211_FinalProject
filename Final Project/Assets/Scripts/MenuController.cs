@@ -12,6 +12,16 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private int defaultVolume = 10;
     [SerializeField] public Animator mainMenuAnim;
+    
+    [Header("Gameplay Settings")]
+    [SerializeField] private Text controllerSenTextValue = null;
+    [SerializeField] private Slider controllerSenslider = null;
+    [SerializeField] private int defaultSen = 4;
+    public int mainControllerSen = 4;
+
+    [Header("Toggle Settings")]
+    [SerializeField] private Toggle invertYToggle = null;
+
 
     [SerializeField] public Animator transition;
     //Play Game
@@ -47,6 +57,25 @@ public class MenuController : MonoBehaviour
         
     }
 
+    public void SetControllerSen(float sensitivity)
+    {
+        mainControllerSen = Mathf.RoundToInt(sensitivity);
+        controllerSenTextValue.text = sensitivity.ToString("0");
+    }
+
+    public void GameplayApply()
+    {
+        if(invertYToggle.isOn)
+        {
+            PlayerPrefs.SetInt("masterInvertY",1);//invert Y
+        }
+        else
+        {
+            PlayerPrefs.SetInt("masterInvertY",0);//not Invert
+        }
+        PlayerPrefs.SetFloat("masterSen",mainControllerSen);
+    }
+
     public void ResetButton(string MenuType)
     {
         if(MenuType == "Audio")
@@ -55,6 +84,14 @@ public class MenuController : MonoBehaviour
             volumeSlider.value = defaultVolume;
             volumeTextValue.text = defaultVolume.ToString("0");
             VolumeApply();
+        }
+        if(MenuType == "Gameplay")
+        {
+            controllerSenTextValue.text = defaultSen.ToString("0");
+            controllerSenslider.value = defaultSen;
+            mainControllerSen = defaultSen;
+            invertYToggle.isOn = false;
+            GameplayApply();
         }
     }
 
