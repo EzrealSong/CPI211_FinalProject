@@ -18,7 +18,9 @@ public class Boss : MonoBehaviour
     [SerializeField]
     public float attackRangeRanged;
     [SerializeField]
-    NavMeshAgent Crab;
+    NavMeshAgent CrabAi;
+
+    public Animator CrabAni;
 
     public GameObject bullet;
     private float shootCooldown;
@@ -37,11 +39,11 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        waypointIndex = 0;
-        transform.LookAt(waypoints[waypointIndex].position);
+        // waypointIndex = 0;
+        // transform.LookAt(waypoints[waypointIndex].position);
         shootCooldown = startShootCooldown;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        Crab = GetComponent<NavMeshAgent>();
+        CrabAi = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -50,15 +52,15 @@ public class Boss : MonoBehaviour
 
         distance = Vector3.Distance(player.position, transform.position);
 
-        if(distance > detectionRange && inCombat == false)//PATROLLING
-        {
-            dist = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
-            if(dist<1f)
-            {
-                IncreaseIndex();
-            }
-            //Patrol();
-        }
+        // if(distance > detectionRange && inCombat == false)//PATROLLING
+        // {
+        //     dist = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
+        //     if(dist<1f)
+        //     {
+        //         IncreaseIndex();
+        //     }
+        //     //Patrol();
+        // }
 
         if(distance <= detectionRange)//can move
         {
@@ -66,16 +68,19 @@ public class Boss : MonoBehaviour
                 canMove = true;
                 if(canMove)
                 {
-                    Crab.SetDestination(player.transform.position);
+                    CrabAi.SetDestination(player.transform.position);
+                    CrabAni.SetBool("PlayerFound",true);
                 }
                 if(distance <= attackRangeRanged)//can attack range
                 {
                     canAttackRanged = true;
                     canAttackMelee = false;
                     canMove = true;
+                    CrabAni.SetBool("CanAttack",true);
+                    CrabAni.SetBool("CanAttack2",false);
 
                     //Vector3 direction = new Vector3(player.position.x - transform.position.x, player.position.y - transform.position.y, player.position.z - transform.position.z);
-                    Crab.SetDestination(player.transform.position);
+                    CrabAi.SetDestination(player.transform.position);
 
                     if(shootCooldown <= 0)
                     {
@@ -87,10 +92,12 @@ public class Boss : MonoBehaviour
                         shootCooldown -= Time.deltaTime;
                     }
                 }
-                if(distance <= attackRangeMelee)//can attack melee
+                else if(distance <= attackRangeMelee)//can attack melee
                 {
                     canAttackMelee = true;
                     canMove = false;
+                    CrabAni.SetBool("CanAttack",false);
+                    CrabAni.SetBool("CanAttack2",true);
                 }
                 /*if(inCombat == true)//turret mode
                 {
@@ -118,16 +125,25 @@ public class Boss : MonoBehaviour
                     while(distance > detectionRange);
                     shootCooldown = startShootCooldown;
                 }*/
+                else
+                {
                 canMove = true;
                 canAttackRanged = false;
                 canAttackMelee = false;
+                CrabAni.SetBool("CanAttack",false);
+                CrabAni.SetBool("CanAttack2",false);
+                }
+                
         }
         else
         {
+            CrabAni.SetBool("PlayerFound",false);
+            CrabAni.SetBool("CanAttack",false);
+            CrabAni.SetBool("CanAttack2",false);
             canMove = false;
             canAttackRanged = false;
             canAttackMelee = false;
-            Crab.SetDestination(this.transform.position);
+            CrabAi.SetDestination(this.transform.position);
         }
     }
 

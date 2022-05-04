@@ -6,14 +6,11 @@ using UnityEngine.UI;
 
 public class GameWInUI : MonoBehaviour
 {
-     void start()
+    
+    public void Setup()//show game win ui
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-    }
-
-    public void Setup()//show game win ui
-    {
         gameObject.SetActive(true);
     }
 

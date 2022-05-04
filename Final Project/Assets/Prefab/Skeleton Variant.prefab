@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0fdcb8b58688f4a990bbb10e5c3f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 6688948890273665160, guid: 8081e958d11f6ba4aa9fefa479fcddc9, type: 3}
   distance: 0
   moveSpeed: 3.5
   FindingRange: 9

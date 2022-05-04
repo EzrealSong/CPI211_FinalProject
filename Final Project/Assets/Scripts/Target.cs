@@ -9,11 +9,20 @@ public class Target : MonoBehaviour
     public bool objectdead = false;
     private float time = 2f;
 
+    public GameWInUI gameWIn;
+
     public void TakeDamage(float amount)
     {
         health -= amount;
         if (health <= 0f)
         {
+            if(this.gameObject.tag == "Boss")
+            {
+                this.gameObject.GetComponent<Animator>().Play("Death");
+                Destroy(gameObject, time);
+                gameWIn.Setup();
+
+            }
             objectdead = true;
             this.GetComponent<NavMeshAgent>().Stop();
             Die();

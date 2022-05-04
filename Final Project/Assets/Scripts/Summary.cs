@@ -8,10 +8,7 @@ public class Summary : MonoBehaviour
     [SerializeField]
     private Text LootShow;
     [SerializeField]
-    private Text TimeResult;
-    [SerializeField]
-    private float starttime;
-    [SerializeField]
+ 
     public int loot { get; private set; }
     [SerializeField]
     public PlayerInventory inventory;
