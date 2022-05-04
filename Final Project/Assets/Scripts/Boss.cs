@@ -57,7 +57,7 @@ public class Boss : MonoBehaviour
             {
                 IncreaseIndex();
             }
-            Patrol();
+            //Patrol();
         }
 
         if(distance <= detectionRange)//can move
@@ -74,9 +74,8 @@ public class Boss : MonoBehaviour
                     canAttackMelee = false;
                     canMove = true;
 
-                    Vector3 direction = new Vector3(player.position.x - transform.position.x, player.position.y - transform.position.y, player.position.z - transform.position.z);
-
-                    transform.up = direction;
+                    //Vector3 direction = new Vector3(player.position.x - transform.position.x, player.position.y - transform.position.y, player.position.z - transform.position.z);
+                    Crab.SetDestination(player.transform.position);
 
                     if(shootCooldown <= 0)
                     {
@@ -132,10 +131,10 @@ public class Boss : MonoBehaviour
         }
     }
 
-    void Patrol()
-    {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
+    // void Patrol()
+    // {
+    //     transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    // }
 
     void IncreaseIndex()
     {
