@@ -50,4 +50,9 @@ public class Player : MonoBehaviour
             gameover = false;
         
     }
+    public void HealDiamonds()
+    {
+        currentHealth = MaxHealth;
+        healthBar.setHealth(currentHealth);
+    }
 }

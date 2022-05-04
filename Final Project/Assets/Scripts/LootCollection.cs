@@ -7,6 +7,7 @@ public class LootCollection : MonoBehaviour
     [SerializeField] private int lootAmount;
 
     private PlayerInventory inventory;
+    [SerializeField] public Player player;
 
     void OnTriggerEnter(Collider other)
     {
@@ -31,6 +32,7 @@ public class LootCollection : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("Key Sound");
                 inventory.LootCollected(lootAmount);
                 gameObject.SetActive(false);
+                player.HealDiamonds();
             }
             else if (gameObject.tag == "ChestLoot")
             {

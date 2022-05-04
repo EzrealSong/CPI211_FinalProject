@@ -12,10 +12,13 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private int defaultVolume = 10;
     [SerializeField] public Animator mainMenuAnim;
+
+    [SerializeField] public Animator transition;
     //Play Game
     public void PlayGame()
     {
         MusicChange();
+        StartCoroutine(Crossfade());
         SceneManager.LoadScene("Final Project");
     }
 
@@ -53,6 +56,12 @@ public class MenuController : MonoBehaviour
             volumeTextValue.text = defaultVolume.ToString("0");
             VolumeApply();
         }
+    }
+
+    IEnumerator Crossfade()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(3);
     }
 
     

@@ -18,6 +18,7 @@ public class PlayerDeath : MonoBehaviour
 
     public void GameOver()
     {
+        Debug.Log("AAAAAHHHH");
         LootsResult += inventory.AmountOfLoot;
         Setup(LootsResult);
     }
