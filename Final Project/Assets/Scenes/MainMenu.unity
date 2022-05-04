@@ -294,8 +294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.998, y: -381}
-  m_SizeDelta: {x: 129.2568, y: 91.2668}
+  m_AnchoredPosition: {x: -9.2294, y: -359.9996}
+  m_SizeDelta: {x: 161.7119, y: 133.2675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36179348
 MonoBehaviour:
@@ -3247,8 +3247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.998, y: -13.812}
-  m_SizeDelta: {x: 1070.111, y: 643.11}
+  m_AnchoredPosition: {x: 11.8179, y: -46.087}
+  m_SizeDelta: {x: 1354.5707, y: 707.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999292777
 MonoBehaviour:
@@ -3270,7 +3270,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "You have been TRAPPED in the past, after your teleportation device was
+    stolen by the monsters of the deadly dungeon Work your way to the end of the
+    dungeon \nto try and recover it.\nControls: WASD - Movement, Space - Jump, Number
+    Keys 1-5 - Pull out a gun, Left Click - Fire the gun, Right Click - Scope in,
+    Press and Hold Space - Attach to the magnetic walls."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bac217417ce8f31489fecd624e385da3, type: 2}
   m_sharedMaterial: {fileID: 9153896093601121259, guid: bac217417ce8f31489fecd624e385da3, type: 2}
@@ -5473,7 +5477,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3dcbda32480a0cf4b948aae461249a91, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.628
+  m_Volume: 0.54
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6491,8 +6495,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -519.01, y: -220}
-  m_SizeDelta: {x: 411.8672, y: 89.6131}
+  m_AnchoredPosition: {x: -526.0096, y: -219.04543}
+  m_SizeDelta: {x: 509.8708, y: 87.7039}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915361360
 MonoBehaviour:
@@ -6582,7 +6586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'History
+  m_text: 'History + Controls
 
 '
   m_isRightToLeft: 0
