@@ -3270,11 +3270,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You have been TRAPPED in the past, after your teleportation device was
+  m_text: 'You have been TRAPPED in the past, after your teleportation device was
     stolen by the monsters of the deadly dungeon Work your way to the end of the
-    dungeon \nto try and recover it.\nControls: WASD - Movement, Space - Jump, Number
-    Keys 1-5 - Pull out a gun, Left Click - Fire the gun, Right Click - Scope in,
-    Press and Hold Space - Attach to the magnetic walls."
+    dungeon to try and recover it.
+
+    Controls: WASD - Movement, Space - Jump,
+    Number Keys 1-5 - Pull out a gun, Left Click - Fire the gun, Right Click - Scope
+    in, Press and Hold Space on a wall - Attach to the magnetic roots of the walls.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bac217417ce8f31489fecd624e385da3, type: 2}
   m_sharedMaterial: {fileID: 9153896093601121259, guid: bac217417ce8f31489fecd624e385da3, type: 2}
@@ -4681,7 +4683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'History
+  m_text: 'History + Controls
 
 '
   m_isRightToLeft: 0

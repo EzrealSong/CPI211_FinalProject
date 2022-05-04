@@ -14,6 +14,7 @@ public class PlayerDeath : MonoBehaviour
     public Player PlayerHealth;
     public PlayerInventory inventory;
     public GameObject Player;
+    [SerializeField] private FirstPersonMovement move;
 
     public void GameOver()
     {
@@ -22,11 +23,12 @@ public class PlayerDeath : MonoBehaviour
     }
     public void Setup(int loot)//show loot value in death screen
     {
-        Destroy(Player.gameObject.GetComponent<FirstPersonMovement>());
+        move.canMove = false;
+        //Destroy(Player.gameObject.GetComponent<FirstPersonMovement>());
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         this.gameObject.SetActive(true);
-        LootShow.text = "You have lost " + loot.ToString() + " Value Loots";
+        //LootShow.text = "You have lost " + loot.ToString() + " Value Loots";
         SummaryLoot.text = loot.ToString();
     }
 

@@ -106,12 +106,13 @@ public class DoorRaycast : MonoBehaviour
         if (on && !doOnce)
         {
             crosshair.color = Color.red;
-
+            interactE.SetActive(true);
         }
         else
         {
             crosshair.color = Color.white;
             isCrosshairActive = false;
+            interactE.SetActive(false);
         }
     }
 
