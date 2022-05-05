@@ -18,6 +18,7 @@ TagManager:
   - Golem
   - Giant
   - Boss
+  - Fanciscole
   layers:
   - Default
   - TransparentFX

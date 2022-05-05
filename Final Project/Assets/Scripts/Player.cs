@@ -36,6 +36,11 @@ public class Player : MonoBehaviour
             TakeDamage(30);
             Console.Write("Collided");
         }
+        else if(colli.gameObject.tag == "Boss")
+        {
+            TakeDamage(40);
+            Console.Write("Collided");
+        }
     }
     void TakeDamage(int damage)
         {

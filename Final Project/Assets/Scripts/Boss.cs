@@ -25,7 +25,7 @@ public class Boss : MonoBehaviour
     public GameObject bullet;
     private float shootCooldown;
     public float startShootCooldown;
-    public float health = 1000f;
+    public float health = 1;
     private bool canMove = false;
     private bool canAttackRanged = false;
     private bool canAttackMelee = false;

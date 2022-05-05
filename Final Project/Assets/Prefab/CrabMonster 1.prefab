@@ -563,10 +563,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4095108053990387038}
   - component: {fileID: 4147703247562173796}
-  - component: {fileID: 7547738385977554915}
   - component: {fileID: 7547738385977554917}
   - component: {fileID: 7547738385977554914}
   - component: {fileID: 7547738385977554913}
+  - component: {fileID: 5534623068821105315}
   m_Layer: 0
   m_Name: CrabMonster 1
   m_TagString: Untagged
@@ -610,19 +610,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &7547738385977554915
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4097433836812507352}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 3, z: 4}
-  m_Center: {x: 0, y: 1.6, z: 0}
 --- !u!114 &7547738385977554917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,6 +671,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 500
   objectdead: 0
+  gameWIn: {fileID: 0}
+--- !u!64 &5534623068821105315
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097433836812507352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4097439105154170564
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,9 +880,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4092354643751080458}
   - component: {fileID: 4124310539402332132}
+  - component: {fileID: 2771868733080694841}
   m_Layer: 0
   m_Name: Rikayon
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1044,6 +1047,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00031795911, y: 0.016304154, z: 0.0038340185}
     m_Extent: {x: 0.019063767, y: 0.018203422, z: 0.021267155}
   m_DirtyAABB: 0
+--- !u!65 &2771868733080694841
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097465954585254218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 3, z: 2}
+  m_Center: {x: -0.10297196, y: 1.6136576, z: 0.43791395}
 --- !u!1 &4097475166358967228
 GameObject:
   m_ObjectHideFlags: 0
