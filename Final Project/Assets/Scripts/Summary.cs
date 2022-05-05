@@ -26,6 +26,18 @@ public class Summary : MonoBehaviour
     public GameObject c;
     [SerializeField]
     public int Loots;
+    [SerializeField] public FirstPersonLook firstPersonLook;
+    [SerializeField] public GunSystem gunSystem1;
+    [SerializeField] public GunSystem gunSystem2;
+    [SerializeField] public GunSystem gunSystem3;
+    [SerializeField] public GunSystem gunSystem4;
+    [SerializeField] public GunSystem gunSystem5;
+    [SerializeField] public Jump jump;
+    [SerializeField] public WeaponSwitching weaponSwitching;
+    [SerializeField] public Zoom zoom;
+    [SerializeField] public Crouch crouch;
+    
+
 
 
     Player player;
@@ -34,7 +46,18 @@ public class Summary : MonoBehaviour
     void Start()
     {
         move.canMove = false;
+        firstPersonLook.canLook = false;
+        gunSystem1.canFire = false;
+        gunSystem2.canFire = false;
+        gunSystem3.canFire = false;
+        gunSystem4.canFire = false;
+        gunSystem5.canFire = false;
+        jump.canJump = false;
+        weaponSwitching.canSwitch = false;
+        zoom.canZoom = false;
+        crouch.canCrouch = false;
         Loots = playerinven.AmountOfLoot;
+        
     }
     void Update()
     {

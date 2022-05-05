@@ -21,7 +21,7 @@ public class GunSystem : MonoBehaviour
     private float nextTimeToFire;
     [HideInInspector]
     public int gunType;
-
+    public bool canFire = true;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -32,19 +32,22 @@ public class GunSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && !(Input.GetKey(KeyCode.LeftControl)))
+        if (canFire)
+        {
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && !(Input.GetKey(KeyCode.LeftControl)))
 
-        {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            setBooleanFire();
-            //animator.SetBool("IsFiringAR", true);
-            Shoot();
-            playSound();
-        }
-        if (Input.GetButtonUp("Fire1"))
-        {
-            unsetBooleanFire();
-            //animator.SetBool("IsFiringAR", false);
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                setBooleanFire();
+                //animator.SetBool("IsFiringAR", true);
+                Shoot();
+                playSound();
+            }
+            if (Input.GetButtonUp("Fire1"))
+            {
+                unsetBooleanFire();
+                //animator.SetBool("IsFiringAR", false);
+            }
         }
     }
 
