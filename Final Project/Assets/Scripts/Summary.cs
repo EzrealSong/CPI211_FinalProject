@@ -5,57 +5,56 @@ using UnityEngine.UI;
 
 public class Summary : MonoBehaviour
 {
+    [SerializeField] 
+    private FirstPersonMovement move;
     [SerializeField]
     private Text LootShow;
     [SerializeField]
- 
     public int loot { get; private set; }
     [SerializeField]
     public PlayerInventory inventory;
     
+    [SerializeField]
+    public GameObject s;
+
+    [SerializeField]
+    public GameObject a;
+
+    [SerializeField]
+    public GameObject b;
+    [SerializeField]
+    public GameObject c;
+    [SerializeField]
+    public int Loots;
+
+
     Player player;
+    PlayerInventory playerinven;
 
-    void start()
+    void Start()
     {
-
+        move.canMove = false;
+        Loots = playerinven.AmountOfLoot;
     }
-    // public void summaryLoot()
-    // {
-    //     loot += inventory.AmountOfLoot;
-    //     Setup(loot);
-    // }
-
-    // public void Setup(int num)
-    // {
-    //     LootShow.text = num.ToString("");
-    // }
-
-    // void Start()
-    // {
-    //     starttime = Time.time;
-    // }
-
-    // // Update is called once per frame
-    // void Update()
-    // {
-    //     if (player.gameover == true)
-    //     {
-    //         float t = Time.time - starttime;
-
-    //         string minutes = ((int)t / 60).ToString();
-    //         string seconds = (t % 60).ToString("f2");
-
-    //         TimeResult.text = minutes + ":" + seconds;
-    //     }
-    //     else
-    //     {
-    //         Finnish();
-    //     }
-    // }
-
-
-    // public void Finnish()
-    // {
-    //     TimeResult.color = Color.yellow;
-    // }
+    void Update()
+    {
+        
+        if(Loots >= 9000)
+        {
+            s.SetActive(true);
+        }
+        else if(Loots < 9000 && Loots >= 7500)
+        {
+            a.SetActive(true);
+        }
+        else if(Loots < 7500 && Loots >= 5000)
+        {
+            b.SetActive(true);
+        }
+        else
+        {
+            c.SetActive(true);
+        }
+    }
+   
     }

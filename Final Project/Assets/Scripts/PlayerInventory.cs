@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private Text lootCount;
+    [SerializeField] private Text lootSummary;
     [SerializeField] private Text keyCount;
 
     public int AmountOfLoot { get; private set; }
@@ -23,6 +24,7 @@ public class PlayerInventory : MonoBehaviour
     {
         AmountOfLoot = AmountOfLoot + amount;
         lootCount.text = (("Loot: ") + (AmountOfLoot.ToString()));
+        lootSummary.text = AmountOfLoot.ToString();
     }
 
     public void KeyCollected()
