@@ -174,4 +174,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfaaaf0f0030c546801d5160ea4c8af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootAmount: 1
+  lootAmount: 20
+  player: {fileID: 0}
